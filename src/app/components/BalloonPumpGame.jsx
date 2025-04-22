@@ -221,7 +221,7 @@ export default function BalloonPumpGame() {
         {balloon.bothBoost && (
           <img
             src="/Graphics/Symbol 100011.png"
-            className="absolute bottom-[-110px] left-1/2 transform -translate-x-1/2 w-46 h-46 object-contain"
+            className="absolute bottom-[-93px] left-1/2 transform -translate-x-1/2 w-46 h-46 object-contain"
             alt="thread"
           />
         )}
