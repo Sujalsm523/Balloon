@@ -1,0 +1,97 @@
+@keyframes pump-action {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(100px); }
+    100% { transform: translateY(0); }
+  }
+  
+  .pumpanimate {
+    animation: pump-action 0.4s ease;
+  }
+  
+  @keyframes machine-breathe {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  .machineanimate {
+    animation: machine-breathe 0.4s ease;
+  }
+
+  .burstcontainer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 50;
+  }
+  
+  .burst-spike {
+    position: absolute;
+    width: 4px;
+    height: 40px;
+    background-color: #011508; /* Tailwind green-500 */
+    top: 50%;
+    left: 50%;
+    transform-origin: center bottom;
+    opacity: 0;
+    animation: spike-burst 0.5s ease-out forwards;
+  }
+  
+  @keyframes spike-burst {
+    0% {
+      opacity: 1;
+      transform: scaleY(0) translate(-50%, -50%) rotate(var(--angle));
+    }
+    100% {
+      opacity: 0;
+      transform: scaleY(1.2) translate(-50%, -100%) rotate(var(--angle));
+    }
+  }
+  .popping {
+    animation: balloon-pop-shrink 0.8s ease-out forwards;
+    z-index: 100;
+  }
+  
+  @keyframes pop-scale-fade {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.3);
+      opacity: 0.7;
+    }
+    100% {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+  }
+
+ @keyframes balloon-pop-shrink {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    clip-path: circle(50% at 50% 50%);
+  }
+  20% {
+    transform: scale(0.9);
+    opacity: 0.9;
+    clip-path: polygon(50% 0%, 60% 20%, 80% 30%, 100% 50%, 80% 70%, 60% 80%, 50% 100%, 40% 80%, 20% 70%, 10% 50%, 20% 30%, 40% 20%);
+  }
+  40% {
+    transform: scale(0.7);
+    opacity: 0.8;
+    clip-path: polygon(50% 0%, 75% 20%, 90% 40%, 100% 60%, 90% 80%, 75% 90%, 50% 100%, 25% 90%, 10% 80%, 0% 60%, 10% 40%);
+  }
+  60% {
+    transform: scale(0.5);
+    opacity: 0.7;
+    clip-path: polygon(50% 0%, 80% 5%, 90% 25%, 100% 45%, 95% 65%, 80% 85%, 50% 100%, 20% 85%, 10% 65%, 5% 45%, 10% 25%);
+  }
+  100% {
+    transform: scale(0.3);
+    opacity: 0;
+    clip-path: polygon(50% 50%);
+  }
+}
